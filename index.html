@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🌸 To-Do List</h1>
+
+    <label><input type="checkbox" id="darkToggle"> 🌙 Dark Mode</label><br><br>
+
+    <input type="text" id="taskInput" placeholder="Enter a task..." />
+    <input type="date" id="dueDate" />
+    <select id="priority">
+      <option value="Low">Low Priority</option>
+      <option value="Medium" selected>Medium Priority</option>
+      <option value="High">High Priority</option>
+    </select>
+    <button onclick="addTask()">Add Task</button>
+    <button onclick="clearTasks()">Clear All</button>
+
+    <div class="filter-sort">
+      <h3>Filter & Sort</h3>
+      <select id="filter" onchange="filterTasks()">
+        <option value="All">All</option>
+        <option value="Low">Low Priority</option>
+        <option value="Medium">Medium Priority</option>
+        <option value="High">High Priority</option>
+      </select>
+      <label><input type="checkbox" id="sortDate" onchange="filterTasks()"> Sort by Due Date</label>
+    </div>
+
+    <div id="taskList"></div>
+    <div id="taskCounter"></div>
+  </div>
